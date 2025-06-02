@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "name": "The Alchemist by Paulo Coelho",
+      "description": "A young shepherd named Santiago travels in search of treasure, only to discover that real treasure lies within. This inspiring novel teaches about following your dreams, fate.",
+      "image": "https://i.pinimg.com/originals/24/fc/8f/24fc8fdc899fa70f9a1f3c40fc5575de.jpg",
+      "id": "23cb"
+    },
+    {
+      "name": "Crown of Stars Book by Kate Elliott",
+      "description": "Crown of Stars takes place in Novaria, a Westeros-esque alternative Europe in which tension persists from a long-ago rift between elf-like creatures and humans.",
+      "image": "https://m.media-amazon.com/images/I/61q5tt7sMvL.jpg",
+      "id": "81c4"
+    },
+    {
+      "name": "The Black Magician Trilogy by Trudi Canavan",
+      "description": "The Black Magician trilogy tells the story of Sonea, a girl from the slums of the magical country Kyralia. Though normally only upper class-citizens have the capacity for magic.",
+      "image": "https://m.media-amazon.com/images/I/51bA0cSazKL.jpg",
+      "id": "0b1e"
+    }
+  ]
+}
