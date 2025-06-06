@@ -12,7 +12,7 @@ function AddUser() {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
 
-  const API_URL = "http://localhost:3000/users";
+  const API_URL = "http://localhost:3001/users";
 
   useEffect(() => {
     if (success) {

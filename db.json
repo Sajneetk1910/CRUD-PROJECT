@@ -26,5 +26,19 @@
       "email": "sajneetmoti302@gmail.com",
       "picture": "https://lh3.googleusercontent.com/a/ACg8ocKgTU_Phth7072dLq2C1ZSDq-5Ft38TKTNFfUqbz07cimDy0A=s96-c"
     }
+  ],
+  "signup": [
+    {
+      "id": "f579",
+      "name": "sajneet",
+      "email": "sajneetmoti123@gmai.com",
+      "password": "sajneet123"
+    },
+    {
+      "id": "a44a",
+      "name": "sajneet",
+      "email": "sajneetmoti123@gmail.com",
+      "password": "sajneet123"
+    }
   ]
 }
