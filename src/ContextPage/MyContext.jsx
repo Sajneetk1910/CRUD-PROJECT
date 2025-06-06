@@ -3,19 +3,29 @@ import { createContext, useState } from "react";
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const [editData, setEditData] = useState(null);
+  const savedUser = localStorage.getItem("user");
+  const [user, setUser] = useState(savedUser ? JSON.parse(savedUser) : null);
+
   const [formData, setFormData] = useState({
     name: "",
     description: "",
     image: "",
   });
 
-  console.log("form data",formData)
+  const [editData, setEditData] = useState(null);
+
   return (
     <UserContext.Provider
-      value={{ editData, setEditData, formData, setFormData }}
+      value={{
+        user,
+        setUser,
+        formData,
+        setFormData,
+        editData,
+        setEditData,
+      }}
     >
       {children}
-      </UserContext.Provider>
-  )
-}
+    </UserContext.Provider>
+  );
+};

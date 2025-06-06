@@ -13,7 +13,7 @@ function GetUser() {
   const navigate = useNavigate();
   const { setEditData, setFormData } = useContext(UserContext);
   const [data, setData] = useState([]);
-  const API_URL = "http://localhost:3000/users";
+  const API_URL = "http://localhost:3001/users";
 
   const getUserData = async () => {
     try {
@@ -51,7 +51,7 @@ function GetUser() {
   };
 
   return (
-    <div className="flex flex-wrap justify-center gap-6 mt-8 px-4">
+    <div className="flex flex-wrap justify-center gap-4 mt-6 px-4">
       {data.map((user, id) => (
         <Card
           key={id}
