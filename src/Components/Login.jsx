@@ -1,10 +1,10 @@
-import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { UserContext } from "../ContextPage/MyContext";
 
-import { TextField, Button, Typography, Box, Paper, Link } from "@mui/material";
+import { Box, Button, Link, Paper, TextField, Typography } from "@mui/material";
 
 const Login = () => {
   const { setUser } = useContext(UserContext);
@@ -21,24 +21,23 @@ const Login = () => {
   };
 
   const handleFormSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault();  //prevents page from  refresh after form submit.
     try {
       if (isSignup) {
-        const res = await fetch("http://localhost:3001/users", {
+        const res = await fetch("http://localhost:3001/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
         });
         if (res.ok) {
           alert("Signup successful! Please log in.");
-          setIsSignup(false);
+          setIsSignup(false);  //switched to login now
         } else {
-          alert("Signup failed. Try again.");
+          alert("Try again");
         }
       } else {
-        // Login logic
-        const res = await fetch(
-          `http://localhost:3001/users?email=${formData.email}`
+        const res = await fetch(  //it is fetching after matching email
+          `http://localhost:3001/login?email=${formData.email}`
         );
         const users = await res.json();
         const user = users.find((u) => u.password === formData.password);
@@ -57,6 +56,7 @@ const Login = () => {
 
   const handleGoogleLogin = async (credentialResponse) => {
     const decoded = jwtDecode(credentialResponse.credential);
+    console.log(credentialResponse);
     const user = {
       id: decoded.sub,
       name: decoded.name,
